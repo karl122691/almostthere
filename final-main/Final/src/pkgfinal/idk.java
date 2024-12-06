@@ -57,6 +57,12 @@ public class idk extends javax.swing.JFrame {
         delete2 = new javax.swing.JButton();
         add2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jtable4 = new javax.swing.JTable();
+        add3 = new javax.swing.JButton();
+        delete3 = new javax.swing.JButton();
+        reset3 = new javax.swing.JButton();
+        calculate3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -323,15 +329,88 @@ public class idk extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Adam's method", jPanel3);
 
+        jtable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "#", "Population", "Standard quota", "Nearest int", "Modified quota", "Final apportionment"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtable4.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(jtable4);
+        if (jtable4.getColumnModel().getColumnCount() > 0) {
+            jtable4.getColumnModel().getColumn(0).setResizable(false);
+            jtable4.getColumnModel().getColumn(1).setResizable(false);
+            jtable4.getColumnModel().getColumn(2).setResizable(false);
+            jtable4.getColumnModel().getColumn(3).setResizable(false);
+            jtable4.getColumnModel().getColumn(4).setResizable(false);
+            jtable4.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        add3.setText("Add row");
+        add3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add3ActionPerformed(evt);
+            }
+        });
+
+        delete3.setText("Delete row");
+        delete3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete3ActionPerformed(evt);
+            }
+        });
+
+        reset3.setText("Reset");
+        reset3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reset3ActionPerformed(evt);
+            }
+        });
+
+        calculate3.setText("Calculate");
+        calculate3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calculate3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 951, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(add3)
+                    .addComponent(delete3)
+                    .addComponent(reset3)
+                    .addComponent(calculate3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(add3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(delete3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reset3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(calculate3)))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Webster's method", jPanel4);
@@ -599,6 +678,91 @@ double divisor = 0;
         DefaultTableModel model = (DefaultTableModel) jtable3.getModel();
         model.addRow(new Object[]{});
     }//GEN-LAST:event_add2ActionPerformed
+
+    private void add3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add3ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jtable4.getModel();
+        model.addRow(new Object[]{});
+    }//GEN-LAST:event_add3ActionPerformed
+
+    private void delete3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete3ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jtable4.getModel();
+        int selectedRow = jtable4.getSelectedRow();
+
+// Check if a row is selected
+        if (selectedRow != -1) {
+            model.removeRow(selectedRow); // Remove the selected row
+        } else {
+            // If no row is selected, delete the last row
+            int lastRow = jtable4.getRowCount() - 1;
+            if (lastRow >= 0) {
+                model.removeRow(lastRow);
+            } else {
+                JOptionPane.showMessageDialog(this, "The table is empty!");
+            }
+        }
+    }//GEN-LAST:event_delete3ActionPerformed
+
+    private void reset3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset3ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jtable4.getModel();
+        model.setRowCount(0);
+        enablecomponents(jtable4, add3, delete3, calculate3);
+        resources.setText("");
+    }//GEN-LAST:event_reset3ActionPerformed
+
+    private void calculate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculate3ActionPerformed
+        // Disable buttons and table during calculation
+        DefaultTableModel model = (DefaultTableModel) jtable4.getModel();
+        disablecomponents(jtable4, add3, delete3, calculate3);
+        // Force commit any changes in the 'resources' text field before calculation
+        if (resources != null) {
+            resources.transferFocus(); // Forces the text field to commit the value
+        }
+
+        // Validate and parse the 'resources' value
+        double totres = parseAndValidateResources();
+        if (totres == -1) {
+            // If parsing failed, return early and don't proceed with calculation
+            enablecomponents(jtable4, add3, delete3, calculate3); // Re-enable components
+            return;
+        }
+
+        double total = performtotal(jtable4, 1); // Call the method to get the total
+
+        divisor = total / totres;
+
+        updateStandardQuota(jtable4, divisor, 2);
+        nearestint(jtable4, 2, 3);
+        double totstand = performtotal(jtable4, 2);
+        double totNI = performtotal(jtable4, 3);
+        if (totNI == totres) {
+            updateStandardQuota(jtable4, divisor, 4);
+            nearestint(jtable4, 2, 5);
+            model.addRow(new Object[]{"TOTAL", total, totstand, totNI, totstand, totNI, totres}); // Add the total row
+        } else {
+            double totmod = 0;
+            double totmodNI = 0;
+            double goalNI = totres;
+            do {
+                if (totNI > totres) {
+                    divisor = total / (totres - .005);
+                    totres = totres - .005;
+                    updateStandardQuota(jtable4, divisor, 4);
+                    nearestint(jtable4, 4, 5);
+                    totmod = performtotal(jtable4, 4);
+                    totmodNI = performtotal(jtable4, 5);
+                } else {
+                    divisor = total / (totres + .005);
+                    totres = totres + .005;
+                    updateStandardQuota(jtable4, divisor, 4);
+                    nearestint(jtable4, 4, 5);
+                    totmod = performtotal(jtable4, 4);
+                    totmodNI = performtotal(jtable4, 5);
+                }
+            } while (totmodNI != goalNI);
+            model.addRow(new Object[]{"TOTAL", total, totstand, totNI, totmod, totmodNI}); // Add the total row
+
+        }
+    }//GEN-LAST:event_calculate3ActionPerformed
     private double performtotal(JTable table, int columnIndex) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
 
@@ -727,6 +891,16 @@ double divisor = 0;
         }
     }
 
+    private void nearestint(JTable table, int g, int s) {
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        for (int row = 0; row < model.getRowCount(); row++) {
+            Object standardQuotaValue = model.getValueAt(row, g); // Standard Quota column (index g)
+            double standardQuota = Double.parseDouble(standardQuotaValue.toString());
+            double roundedQuota = Math.round(standardQuota); // Round to the nearest integer
+            model.setValueAt(roundedQuota, row, s); // Set the value in the Lower Quota column (index s)
+        }
+    }
+
     private void distributeExtraSeats(DefaultTableModel model, double extrares) {
         int rowCount = model.getRowCount();
         double[] remainders = new double[rowCount];
@@ -820,12 +994,15 @@ double divisor = 0;
     private javax.swing.JButton add;
     private javax.swing.JButton add1;
     private javax.swing.JButton add2;
+    private javax.swing.JButton add3;
     private javax.swing.JButton calculate;
     private javax.swing.JButton calculate1;
     private javax.swing.JButton calculate2;
+    private javax.swing.JButton calculate3;
     private javax.swing.JButton delete;
     private javax.swing.JButton delete1;
     private javax.swing.JButton delete2;
+    private javax.swing.JButton delete3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -836,13 +1013,16 @@ double divisor = 0;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jtable1;
     private javax.swing.JTable jtable2;
     private javax.swing.JTable jtable3;
+    private javax.swing.JTable jtable4;
     private javax.swing.JButton reset;
     private javax.swing.JButton reset1;
     private javax.swing.JButton reset2;
+    private javax.swing.JButton reset3;
     private javax.swing.JTextField resources;
     // End of variables declaration//GEN-END:variables
 }
