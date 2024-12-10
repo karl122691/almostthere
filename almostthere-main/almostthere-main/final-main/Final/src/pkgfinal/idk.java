@@ -650,7 +650,9 @@ double divisor = 0;
         double totstand = performtotal(jtable2, 2);
         double totLQ = performtotal(jtable2, 3);
         if (totLQ == totres) {
-            model.addRow(new Object[]{"TOTAL", total, totstand, totLQ, totstand, totLQ}); // Add the total row
+            updateLQ(jtable2, 2, 5);
+            nothing(jtable2, 4);
+            model.addRow(new Object[]{"TOTAL", total, totstand, totLQ, "-", totLQ}); // Add the total row
         } else {
             double totmod = 0;
             double totmodLQ = 0;
@@ -728,7 +730,9 @@ double divisor = 0;
         double totstand = performtotal(jtable3, 2);
         double totUQ = performtotal(jtable3, 3);
         if (totUQ == totres) {
-            model.addRow(new Object[]{"TOTAL", total, totstand, totUQ, totstand, totUQ, totres}); // Add the total row
+            updateUQ(jtable3, 2, 5);
+            nothing(jtable3, 4);
+            model.addRow(new Object[]{"TOTAL", total, totstand, totUQ, "-", totUQ}); // Add the total row
         } else {
             double totmod = 0;
             double totmodUQ = 0;
@@ -838,7 +842,8 @@ double divisor = 0;
         if (totNI == totres) {
             updateStandardQuota(jtable4, divisor, 4);
             nearestint(jtable4, 2, 5);
-            model.addRow(new Object[]{"TOTAL", total, totstand, totNI, totstand, totNI, totres}); // Add the total row
+            nothing(jtable4, 4);
+            model.addRow(new Object[]{"TOTAL", total, totstand, totNI, "-", totNI}); // Add the total row
         } else {
             double totmod = 0;
             double totmodNI = 0;
@@ -905,8 +910,12 @@ double divisor = 0;
             updateLQ(jtable5, 2, 8);
             updateUQ(jtable5, 2, 9);
             GM(jtable5, 3, 4, 10);
+            nothing(jtable5, 7);
+            nothing(jtable5, 8);
+            nothing(jtable5, 9);
+            nothing(jtable5, 10);
             huntingtonhillapportion(jtable5, 3, 4, 2, 5, 11);
-            model.addRow(new Object[]{"TOTAL", total, totstand, totLQ, totUQ, totGM, hunt, total, totstand, totLQ, totUQ, totGM, hunt});
+            model.addRow(new Object[]{"TOTAL", total, totstand, totLQ, totUQ, totGM, hunt, "-", "-", "-", "-", hunt});
         } else {
             double totmod = 0;
             double tothunt = 0;
@@ -929,8 +938,8 @@ double divisor = 0;
                     totmodgm = performtotal(jtable5, 10);
                     tothunt = performtotal(jtable5, 11);
                 } else {
-                    divisor = total / (totres - .005);
-                    totres = totres - .005;
+                    divisor = total / (totres + .005);
+                    totres = totres + .005;
                     updateStandardQuota(jtable5, divisor, 7);
                     updateLQ(jtable5, 7, 8);
                     updateUQ(jtable5, 7, 9);
@@ -1033,6 +1042,7 @@ double divisor = 0;
         deleteButton.setEnabled(false);
         table.setEnabled(false);
         calculateButton.setEnabled(false);
+        resources.setEnabled(false);
     }
 
     private void enablecomponents(JTable table, JButton addButton, JButton deleteButton, JButton calculateButton) {
@@ -1040,6 +1050,7 @@ double divisor = 0;
         deleteButton.setEnabled(true);
         table.setEnabled(true);
         calculateButton.setEnabled(true);
+        resources.setEnabled(true);
     }
 
     private double parseAndValidateResources() {
@@ -1102,6 +1113,12 @@ double divisor = 0;
             double standardQuota = Double.parseDouble(standardQuotaValue.toString());
             double upperQuota = Math.ceil(standardQuota); // Standard Quota calculation
             model.setValueAt(upperQuota, row, s); // Set the value in the Lower Quota column (assuming it's index 3)
+        }
+    }
+        private void nothing(JTable table, int s) {
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        for (int row = 0; row < model.getRowCount(); row++) {
+            model.setValueAt("-", row, s); // Set the value in the Lower Quota column (assuming it's index 3)
         }
     }
 
