@@ -75,10 +75,11 @@ public class idk extends javax.swing.JFrame {
         resources = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jtable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "#", "Population", "Standard quota", "LQ", "Extra resources", "Final apportionment"
@@ -92,6 +93,8 @@ public class idk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable1.setGridColor(new java.awt.Color(0, 153, 153));
+        jtable1.setShowVerticalLines(true);
         jtable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jtable1);
         if (jtable1.getColumnModel().getColumnCount() > 0) {
@@ -100,7 +103,6 @@ public class idk extends javax.swing.JFrame {
             jtable1.getColumnModel().getColumn(2).setResizable(false);
             jtable1.getColumnModel().getColumn(3).setResizable(false);
             jtable1.getColumnModel().getColumn(4).setResizable(false);
-            jtable1.getColumnModel().getColumn(4).setHeaderValue("Extra resources");
             jtable1.getColumnModel().getColumn(5).setResizable(false);
         }
 
@@ -137,35 +139,33 @@ public class idk extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add)
-                    .addComponent(delete)
-                    .addComponent(reset)
-                    .addComponent(calculate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1445, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(add)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reset)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculate)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Hamilton's method", jPanel1);
 
         jtable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "#", "Population", "Standard quota", "LQ", "Modified quota", "Final apportionment"
@@ -179,6 +179,9 @@ public class idk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable2.setGridColor(new java.awt.Color(0, 153, 153));
+        jtable2.setShowGrid(true);
+        jtable2.setShowHorizontalLines(false);
         jtable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jtable2);
         if (jtable2.getColumnModel().getColumnCount() > 0) {
@@ -224,34 +227,32 @@ public class idk extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add1)
-                    .addComponent(delete1)
-                    .addComponent(reset1)
-                    .addComponent(calculate1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1445, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(add1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reset1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculate1)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(add1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delete1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reset1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculate1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 287, Short.MAX_VALUE))
+            .addComponent(jScrollPane2)
         );
 
         jTabbedPane1.addTab("Jefferson's method", jPanel2);
 
         jtable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "#", "Population", "Standard quota", "UQ", "Modified quota", "Final apportionment"
@@ -265,6 +266,8 @@ public class idk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable3.setGridColor(new java.awt.Color(0, 153, 153));
+        jtable3.setShowVerticalLines(true);
         jtable3.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jtable3);
         if (jtable3.getColumnModel().getColumnCount() > 0) {
@@ -310,34 +313,32 @@ public class idk extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add2)
-                    .addComponent(delete2)
-                    .addComponent(reset2)
-                    .addComponent(calculate2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1445, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(add2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reset2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculate2)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(add2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delete2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reset2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculate2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Adam's method", jPanel3);
 
         jtable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "#", "Population", "Standard quota", "Nearest int", "Modified quota", "Final apportionment"
@@ -351,6 +352,8 @@ public class idk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable4.setGridColor(new java.awt.Color(0, 153, 153));
+        jtable4.setShowVerticalLines(true);
         jtable4.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jtable4);
         if (jtable4.getColumnModel().getColumnCount() > 0) {
@@ -396,34 +399,32 @@ public class idk extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add3)
-                    .addComponent(delete3)
-                    .addComponent(reset3)
-                    .addComponent(calculate3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1445, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(add3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reset3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculate3)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(add3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delete3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reset3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculate3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Webster's method", jPanel4);
 
         jtable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "#", "Population", "Standard quota", "LQ", "UQ", "GM", "Apportionment", "Modified quota", "LQ", "UQ", "GM", "Final apportionment"
@@ -437,6 +438,8 @@ public class idk extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtable5.setGridColor(new java.awt.Color(0, 153, 153));
+        jtable5.setShowVerticalLines(true);
         jtable5.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(jtable5);
         if (jtable5.getColumnModel().getColumnCount() > 0) {
@@ -488,63 +491,44 @@ public class idk extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(add4)
-                    .addComponent(delete4)
-                    .addComponent(reset4)
-                    .addComponent(calculate4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculate4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1445, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(add4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(reset4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(calculate4)))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(add4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(delete4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reset4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(calculate4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 287, Short.MAX_VALUE))
+            .addComponent(jScrollPane5)
         );
 
         jTabbedPane1.addTab("Huntington - Mill method", jPanel5);
 
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 136, 1570, 700));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Apportionment");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 957, 65));
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Total number of resources to be allocated:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 425, 53));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTabbedPane1))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(resources)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(resources, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-        );
+        resources.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        getContentPane().add(resources, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, 526, 53));
 
         pack();
         setLocationRelativeTo(null);
@@ -1086,12 +1070,12 @@ double divisor = 0;
     private void updateStandardQuota(JTable table, double divisor, int s) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         for (int row = 0; row < model.getRowCount(); row++) {
-            // Fetch the population from the table (assuming the value is already validated)
+            // Fetch the population from the table 
             Object populationValue = model.getValueAt(row, 1); // Population column (index 1)
             double population = Double.parseDouble(populationValue.toString());
             double standardQuota = population / divisor; // Standard Quota calculation
             BigDecimal roundedQuota = BigDecimal.valueOf(standardQuota).setScale(2, RoundingMode.HALF_UP);
-            // Update the Standard Quota column (assuming it's at index 2)
+         
             model.setValueAt(roundedQuota, row, s); // Set the value in the Standard Quota column
         }
     }
@@ -1101,8 +1085,8 @@ double divisor = 0;
         for (int row = 0; row < model.getRowCount(); row++) {
             Object standardQuotaValue = model.getValueAt(row, g); // Standard Quota column (index 2)
             double standardQuota = Double.parseDouble(standardQuotaValue.toString());
-            double lowerQuota = Math.floor(standardQuota); // Standard Quota calculation
-            model.setValueAt(lowerQuota, row, s); // Set the value in the Lower Quota column (assuming it's index 3)
+            double lowerQuota = Math.floor(standardQuota); 
+            model.setValueAt(lowerQuota, row, s); 
         }
     }
 
@@ -1111,14 +1095,14 @@ double divisor = 0;
         for (int row = 0; row < model.getRowCount(); row++) {
             Object standardQuotaValue = model.getValueAt(row, g); // Standard Quota column (index 2)
             double standardQuota = Double.parseDouble(standardQuotaValue.toString());
-            double upperQuota = Math.ceil(standardQuota); // Standard Quota calculation
-            model.setValueAt(upperQuota, row, s); // Set the value in the Lower Quota column (assuming it's index 3)
+            double upperQuota = Math.ceil(standardQuota);
+            model.setValueAt(upperQuota, row, s);
         }
     }
         private void nothing(JTable table, int s) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         for (int row = 0; row < model.getRowCount(); row++) {
-            model.setValueAt("-", row, s); // Set the value in the Lower Quota column (assuming it's index 3)
+            model.setValueAt("-", row, s);
         }
     }
 
@@ -1139,9 +1123,8 @@ double divisor = 0;
             Object upperQuotaValue = model.getValueAt(row, g2);
             double lowerQuota = Double.parseDouble(lowerQuotaValue.toString());
             double upperQuota = Double.parseDouble(upperQuotaValue.toString());
-            double geometricmean = Math.sqrt(lowerQuota * upperQuota); // Round to the nearest integer
+            double geometricmean = Math.sqrt(lowerQuota * upperQuota);
             BigDecimal roundedQuota = BigDecimal.valueOf(geometricmean).setScale(2, RoundingMode.HALF_UP);
-            // Update the Standard Quota column (assuming it's at index 2)
             model.setValueAt(roundedQuota, row, s); // Set the value in the Lower Quota column (index s)
         }
     }
@@ -1165,45 +1148,50 @@ double divisor = 0;
         }
     }
 
-    private void distributeExtraSeats(DefaultTableModel model, double extrares) {
-        int rowCount = model.getRowCount();
-        double[] remainders = new double[rowCount];
-        int[] extraSeatDistribution = new int[rowCount];
+private void distributeExtraSeats(DefaultTableModel model, double extrares) {
+    int rowCount = model.getRowCount();
+    double[] remainders = new double[rowCount];
+    int[] extraSeatDistribution = new int[rowCount];
 
-        // Calculate remainders for each row
+    // Calculate remainders for each row
+    for (int row = 0; row < rowCount; row++) {
+        double standardQuota = Double.parseDouble(model.getValueAt(row, 2).toString());
+        double lowerQuota = Math.floor(standardQuota);
+        remainders[row] = standardQuota - lowerQuota;
+    }
+
+    // Distribute extra seats based on remainders and tie-break by population
+    while (extrares > 0) {
+        int maxIndex = -1;
+        double maxRemainder = -1;
+        int maxPopulation = -1;
+
+        // Find the row with the maximum remainder
         for (int row = 0; row < rowCount; row++) {
-            double standardQuota = Double.parseDouble(model.getValueAt(row, 2).toString());
-            double lowerQuota = Math.floor(standardQuota);
-            remainders[row] = standardQuota - lowerQuota;
-        }
-
-        // Distribute extra seats based on remainders
-        while (extrares > 0) {
-            int maxIndex = -1;
-            double maxRemainder = -1;
-
-            // Find the row with the maximum remainder
-            for (int row = 0; row < rowCount; row++) {
-                if (remainders[row] > maxRemainder) {
-                    maxRemainder = remainders[row];
-                    maxIndex = row;
-                }
-            }
-
-            if (maxIndex >= 0) {
-                extraSeatDistribution[maxIndex]++;
-                remainders[maxIndex] = -1; // Mark as used
-                extrares--;
-            } else {
-                break;
+            if (remainders[row] > maxRemainder ||
+                (remainders[row] == maxRemainder &&
+                 Integer.parseInt(model.getValueAt(row, 1).toString()) > maxPopulation)) {
+                
+                maxRemainder = remainders[row];
+                maxPopulation = Integer.parseInt(model.getValueAt(row, 1).toString());
+                maxIndex = row;
             }
         }
 
-        // Update the "Extra Seats" column
-        for (int row = 0; row < rowCount; row++) {
-            model.setValueAt(extraSeatDistribution[row], row, 4); // Assuming column 4 is "Extra Seats"
+        if (maxIndex >= 0) {
+            extraSeatDistribution[maxIndex]++;
+            remainders[maxIndex] = -1;  // Mark as used
+            extrares--;
+        } else {
+            break;
         }
     }
+
+    // Update the "Extra Seats" column
+    for (int row = 0; row < rowCount; row++) {
+        model.setValueAt(extraSeatDistribution[row], row, 4);
+    }
+}
 
     private void hamiltonapportion(DefaultTableModel model) {
         for (int row = 0; row < model.getRowCount(); row++) {
